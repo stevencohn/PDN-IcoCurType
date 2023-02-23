@@ -64,7 +64,7 @@ internal static class EOPDNUtility {
 		}
 		if (Doc.Width != Width || Doc.Height != Height) {
 			Surface surface2 = new Surface(Width, Height);
-			surface2.FitSurface(ResamplingAlgorithm.Bilinear, surface);
+			surface2.FitSurface(ResamplingAlgorithm.LinearLowQuality, surface);
 			using (Bitmap original = surface2.CreateAliasedBitmap()) {
 				result = new Bitmap(original);
 			}
@@ -80,7 +80,7 @@ internal static class EOPDNUtility {
 	public static Bitmap ResizedBitmapFromSurface(Surface surf, Size desiredSize) {
 		if (desiredSize.Width != surf.Width || desiredSize.Height != surf.Height) {
 			Surface surface = new Surface(desiredSize);
-			surface.FitSurface(ResamplingAlgorithm.Bilinear, surf);
+			surface.FitSurface(ResamplingAlgorithm.LinearLowQuality, surf);
 			return new Bitmap(surface.CreateAliasedBitmap());
 		}
 		using Bitmap original = surf.CreateAliasedBitmap();
@@ -89,7 +89,7 @@ internal static class EOPDNUtility {
 
 	public static Surface ResizeSurface(Size size, Surface surf) {
 		Surface surface = new Surface(size);
-		ResamplingAlgorithm algorithm = ResamplingAlgorithm.SuperSampling;
+		ResamplingAlgorithm algorithm = ResamplingAlgorithm.AdaptiveBestQuality;
 		if (size.Width > surf.Width || size.Height > surf.Height) {
 			algorithm = ResamplingAlgorithm.NearestNeighbor;
 		}

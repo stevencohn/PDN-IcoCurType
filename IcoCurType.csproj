@@ -1,6 +1,6 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>net6.0-windows</TargetFramework>
+    <TargetFramework>net7.0-windows</TargetFramework>
     <AssemblyName>IcoCurType</AssemblyName>
     <GenerateAssemblyInfo>False</GenerateAssemblyInfo>
     <UseWindowsForms>True</UseWindowsForms>
@@ -19,13 +19,19 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="PaintDotNet.Base">
-      <HintPath>Paint.Net\PaintDotNet.Base.dll</HintPath>
+      <HintPath>C:\Program Files\paint.net\PaintDotNet.Base.dll</HintPath>
     </Reference>
-    <Reference Include="PaintDotNet.Core">
-      <HintPath>Paint.Net\PaintDotNet.Core.dll</HintPath>
+	  <Reference Include="PaintDotNet.ComponentModel">
+		  <HintPath>C:\Program Files\paint.net\PaintDotNet.ComponentModel.dll</HintPath>
+	  </Reference>
+	  <Reference Include="PaintDotNet.Core">
+      <HintPath>C:\Program Files\paint.net\PaintDotNet.Core.dll</HintPath>
     </Reference>
     <Reference Include="PaintDotNet.Data">
-      <HintPath>Paint.Net\PaintDotNet.Data.dll</HintPath>
+      <HintPath>C:\Program Files\paint.net\PaintDotNet.Data.dll</HintPath>
     </Reference>
+	  <Reference Include="PaintDotNet.Primitives">
+		  <HintPath>C:\Program Files\paint.net\PaintDotNet.Primitives.dll</HintPath>
+	  </Reference>
   </ItemGroup>
 </Project>
